@@ -10,6 +10,7 @@
    :title: 디텍트론2 한글 문서
    :description: 디텍트론2 문서 한글 번역본 (Korean Translation of Detectron2 documentations)
    :keywords: detectron2, 디텍트론2, translation, 번역, Korean, 한글, PyTorch, 파이토치, documentation, 문서
+   :google-site-verification: 0rgldT33X2r5BPZaYDAO724uo0xBHdU_qk3kiXI_GR4
 
 .. toctree::
    :maxdepth: 2
