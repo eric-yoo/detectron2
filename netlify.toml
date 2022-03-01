@@ -5,4 +5,3 @@
 
 [build.environment]
   PYTHON_VERSION = "3.7"
-  SITEMAP_URL = "https://detectron2-kr.netlify.app/sitemap.xml"
