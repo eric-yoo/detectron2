@@ -57,12 +57,12 @@ When sending a PR, please do:
 6. Make sure your code lints with `./dev/linter.sh`.
 
 
-## Contributor License Agreement ("CLA")
+## 기여자 라이선스 동의 ("CLA")
 In order to accept your pull request, we need you to submit a CLA. You only need
 to do this once to work on any of Facebook's open source projects.
 
 Complete your CLA here: <https://code.facebook.com/cla>
 
-## License
+## 라이선스
 By contributing to detectron2, you agree that your contributions will be licensed
 under the LICENSE file in the root directory of this source tree.
