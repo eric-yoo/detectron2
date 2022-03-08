@@ -1,25 +1,25 @@
 
-# Benchmarks
+# 벤치마크
 
-Here we benchmark the training speed of a Mask R-CNN in detectron2,
-with some other popular open source Mask R-CNN implementations.
+여기서는 디텍트론2에서 제공하는 Mask R-CNN의 학습 속도를
+다른 유명한 오픈소스 구현체 몇 가지와 비교합니다.
 
 
-### Settings
+### 실험 환경
 
-* Hardware: 8 NVIDIA V100s with NVLink.
-* Software: Python 3.7, CUDA 10.1, cuDNN 7.6.5, PyTorch 1.5,
+* 하드웨어: NVIDIA V100 8개와 NVLink.
+* 소프트웨어: Python 3.7, CUDA 10.1, cuDNN 7.6.5, PyTorch 1.5,
   TensorFlow 1.15.0rc2, Keras 2.2.5, MxNet 1.6.0b20190820.
-* Model: an end-to-end R-50-FPN Mask-RCNN model, using the same hyperparameter as the
-  [Detectron baseline config](https://github.com/facebookresearch/Detectron/blob/master/configs/12_2017_baselines/e2e_mask_rcnn_R-50-FPN_1x.yaml)
-  (it does not have scale augmentation).
-* Metrics: We use the average throughput in iterations 100-500 to skip GPU warmup time.
-  Note that for R-CNN-style models, the throughput of a model typically changes during training, because
-  it depends on the predictions of the model. Therefore this metric is not directly comparable with
-  "train speed" in model zoo, which is the average speed of the entire training run.
+* 모델: [Detectron baseline config](https://github.com/facebookresearch/Detectron/blob/master/configs/12_2017_baselines/e2e_mask_rcnn_R-50-FPN_1x.yaml) 와
+  동일한 하이퍼파라미터를 사용하는 엔드-투-엔드 R-50-FPN Mask-RCNN 모델  
+  (scale augmentation 없음).
+* 메트릭: GPU 웜업 시간을 무시하기 위해 100-500 iteration의 평균 스루풋(throughput)을 사용합니다.
+  R-CNN 스타일 모델의 경우, 모델의 스루풋이 예측값(prediction)의 영향을 받기 때문에
+  일반적으로 학습이 진행됨에 따라 스루풋이 변합니다. 따라서 이 메트릭을 모델 zoo의 "train speed" 
+  값(전체 학습의 평균 속도)과 직접 비교하기는 어렵습니다.
 
 
-### Main Results
+### 실험 결과
 
 ```eval_rst
 +-------------------------------+--------------------+
@@ -69,47 +69,47 @@ __ https://github.com/matterport/Mask_RCNN/
 ```
 
 
-Details for each implementation:
+각 구현체에 대한 세부 정보:
 
-* __Detectron2__: with release v0.1.2, run:
+* __Detectron2__: 릴리즈 v0.1.2 에서 다음을 실행하십시오.
   ```
   python tools/train_net.py  --config-file configs/Detectron1-Comparisons/mask_rcnn_R_50_FPN_noaug_1x.yaml --num-gpus 8
   ```
 
-* __mmdetection__: at commit `b0d845f`, run
+* __mmdetection__: `b0d845f` 커밋에서 다음을 실행하십시오.
   ```
   ./tools/dist_train.sh configs/mask_rcnn/mask_rcnn_r50_caffe_fpn_1x_coco.py 8
   ```
 
-* __maskrcnn-benchmark__: use commit `0ce8f6f` with `sed -i 's/torch.uint8/torch.bool/g' **/*.py; sed -i 's/AT_CHECK/TORCH_CHECK/g' **/*.cu`
-  to make it compatible with PyTorch 1.5. Then, run training with
+* __maskrcnn-benchmark__: `0ce8f6f` 커밋에서 PyTorch 1.5와의 호환성을 위해 `sed -i 's/torch.uint8/torch.bool/g' **/*.py; sed -i 's/AT_CHECK/TORCH_CHECK/g' **/*.cu` 를
+  실행합니다. 이후 아래와 같이 학습을 실행하십시오.
   ```
   python -m torch.distributed.launch --nproc_per_node=8 tools/train_net.py --config-file configs/e2e_mask_rcnn_R_50_FPN_1x.yaml
   ```
-  The speed we observed is faster than its model zoo, likely due to different software versions.
+  소프트웨어 버전 차이로 인해 maskrcnn-benchmark의 모델 zoo보다 속도가 빠른 것으로 측정됐습니다.
 
-* __tensorpack__: at commit `caafda`, `export TF_CUDNN_USE_AUTOTUNE=0`, then run
+* __tensorpack__: `caafda` 커밋에서 `export TF_CUDNN_USE_AUTOTUNE=0` 실행 후, 다음을 실행하십시오.
   ```
   mpirun -np 8 ./train.py --config DATA.BASEDIR=/data/coco TRAINER=horovod BACKBONE.STRIDE_1X1=True TRAIN.STEPS_PER_EPOCH=50 --load ImageNet-R50-AlignPadding.npz
   ```
 
-* __SimpleDet__: at commit `9187a1`, run
+* __SimpleDet__: `9187a1` 커밋에서 다음을 실행하십시오.
   ```
   python detection_train.py --config config/mask_r50v1_fpn_1x.py
   ```
 
-* __Detectron__: run
+* __Detectron__: 다음을 실행하십시오.
   ```
   python tools/train_net.py --cfg configs/12_2017_baselines/e2e_mask_rcnn_R-50-FPN_1x.yaml
   ```
-  Note that many of its ops run on CPUs, therefore the performance is limited.
+  연산의 많은 부분이 CPU에서 일어나므로 성능이 제한적입니다.
 
-* __matterport/Mask_RCNN__: at commit `3deaec`, apply the following diff, `export TF_CUDNN_USE_AUTOTUNE=0`, then run
+* __matterport/Mask_RCNN__: `3deaec` 커밋에서 다음의 diff를 적용하고 `export TF_CUDNN_USE_AUTOTUNE=0` 실행 후, 다음을 실행하십시오.
   ```
   python coco.py train --dataset=/data/coco/ --model=imagenet
   ```
-  Note that many small details in this implementation might be different
-  from Detectron's standards.
+  이 구현체의 여러 세부적인 사항들은 디텍트론의
+  표준과 다를 수 있습니다.
 
   <details>
   <summary>
