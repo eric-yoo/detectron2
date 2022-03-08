@@ -1,11 +1,11 @@
-# Change Log and Backward Compatibility
+# 변경로그 (Change Log) 및 하위 호환성
 
-### Releases
+### 릴리즈
 See release logs at
 [https://github.com/facebookresearch/detectron2/releases](https://github.com/facebookresearch/detectron2/releases)
 for new updates.
 
-### Backward Compatibility
+### 하위 호환성
 
 Due to the research nature of what the library does, there might be backward incompatible changes.
 But we try to reduce users' disruption by the following ways:
@@ -30,7 +30,7 @@ the frequency and scope of API changes will be much smaller than code changes.
 
 To see such changes, search for "incompatible changes" in [release logs](https://github.com/facebookresearch/detectron2/releases).
 
-### Config Version Change Log
+### 환경설정 (Config) 버전 변경로그
 
 Detectron2's config version has not been changed since open source.
 There is no need for an open source user to worry about this.

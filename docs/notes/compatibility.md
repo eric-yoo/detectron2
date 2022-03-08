@@ -1,4 +1,4 @@
-# Compatibility with Other Libraries
+# 다른 라이브러리와의 호환성
 
 ## Compatibility with Detectron (and maskrcnn-benchmark)
 
