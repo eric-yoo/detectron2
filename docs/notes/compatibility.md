@@ -1,6 +1,6 @@
 # 다른 라이브러리와의 호환성
 
-## Compatibility with Detectron (and maskrcnn-benchmark)
+## 디텍트론 (및 maskrcnn-benchmark)과의 호환성
 
 Detectron2 addresses some legacy issues left in Detectron. As a result, their models
 are not compatible:
@@ -69,14 +69,14 @@ explains more details on the above mentioned issues
 about pixels, coordinates, and "+1"s.
 
 
-## Compatibility with Caffe2
+## Caffe2와의 호환성
 
 As mentioned above, despite the incompatibilities with Detectron, the relevant
 ops have been implemented in Caffe2.
 Therefore, models trained with detectron2 can be converted in Caffe2.
 See [Deployment](../tutorials/deployment.md) for the tutorial.
 
-## Compatibility with TensorFlow
+## TensorFlow와의 호환성
 
 Most ops are available in TensorFlow, although some tiny differences in
 the implementation of resize / ROIAlign / padding need to be addressed.
