@@ -4,7 +4,7 @@
 .. toctree::
    :maxdepth: 2
 
-   벤치마크
-   호환성
-   기여하기
-   변경로그
+   benchmarks
+   compatibility
+   contributing
+   changelog
