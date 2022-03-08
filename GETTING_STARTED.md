@@ -1,4 +1,4 @@
-## Getting Started with Detectron2
+## 디텍트론2 시작하기
 
 This document provides a brief intro of the usage of builtin command-line tools in detectron2.
 
@@ -8,7 +8,7 @@ which covers how to run inference with an
 existing model, and how to train a builtin model on a custom dataset.
 
 
-### Inference Demo with Pre-trained Models
+### 사전 학습된 모델을 통한 추론 (Inference) 데모
 
 1. Pick a model and its config file from
   [model zoo](MODEL_ZOO.md),
@@ -32,7 +32,7 @@ to understand its behavior. Some common arguments are:
 * To save outputs to a directory (for images) or a file (for webcam or video), use `--output`.
 
 
-### Training & Evaluation in Command Line
+### 커맨드라인에서 학습 & 평가하기
 
 We provide two scripts in "tools/plain_train_net.py" and "tools/train_net.py",
 that are made to train all the configs provided in detectron2. You may want to
@@ -68,7 +68,7 @@ To evaluate a model's performance, use
 ```
 For more options, see `./train_net.py -h`.
 
-### Use Detectron2 APIs in Your Code
+### 코드에서 디텍트론2 사용하기
 
 See our [Colab Notebook](https://colab.research.google.com/drive/16jcaJoc6bCFAQ96jDe2HwtXj7BMD_-m5)
 to learn how to use detectron2 APIs to:

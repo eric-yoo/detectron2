@@ -1,4 +1,4 @@
-# Use Builtin Datasets
+# 내장(Builtin) 데이터셋 사용하기
 
 A dataset can be used by accessing [DatasetCatalog](https://detectron2.readthedocs.io/modules/data.html#detectron2.data.DatasetCatalog)
 for its data, or [MetadataCatalog](https://detectron2.readthedocs.io/modules/data.html#detectron2.data.MetadataCatalog) for its metadata (class names, etc).
@@ -24,7 +24,7 @@ If left unset, the default is `./datasets` relative to your current working dire
 The [model zoo](https://github.com/facebookresearch/detectron2/blob/master/MODEL_ZOO.md)
 contains configs and models that use these builtin datasets.
 
-## Expected dataset structure for [COCO instance/keypoint detection](https://cocodataset.org/#download):
+## [COCO instance/keypoint detection](https://cocodataset.org/#download)을 위한 데이터셋 구조:
 
 ```
 coco/
@@ -40,7 +40,7 @@ You can use the 2014 version of the dataset as well.
 Some of the builtin tests (`dev/run_*_tests.sh`) uses a tiny version of the COCO dataset,
 which you can download with `./datasets/prepare_for_tests.sh`.
 
-## Expected dataset structure for PanopticFPN:
+## PanopticFPN을 위한 데이터셋 구조:
 
 Extract panoptic annotations from [COCO website](https://cocodataset.org/#download)
 into the following structure:
@@ -58,7 +58,7 @@ pip install git+https://github.com/cocodataset/panopticapi.git
 ```
 Then, run `python datasets/prepare_panoptic_fpn.py`, to extract semantic annotations from panoptic annotations.
 
-## Expected dataset structure for [LVIS instance segmentation](https://www.lvisdataset.org/dataset):
+## [LVIS instance segmentation](https://www.lvisdataset.org/dataset)을 위한 데이터셋 구조:
 ```
 coco/
   {train,val,test}2017/
@@ -77,7 +77,7 @@ pip install git+https://github.com/lvis-dataset/lvis-api.git
 To evaluate models trained on the COCO dataset using LVIS annotations,
 run `python datasets/prepare_cocofied_lvis.py` to prepare "cocofied" LVIS annotations.
 
-## Expected dataset structure for [cityscapes](https://www.cityscapes-dataset.com/downloads/):
+## [cityscapes](https://www.cityscapes-dataset.com/downloads/)를 위한 데이터셋 구조:
 ```
 cityscapes/
   gtFine/
@@ -117,7 +117,7 @@ CITYSCAPES_DATASET=/path/to/abovementioned/cityscapes python cityscapesscripts/p
 ```
 These files are not needed for semantic and instance segmentation.
 
-## Expected dataset structure for [Pascal VOC](http://host.robots.ox.ac.uk/pascal/VOC/index.html):
+## [Pascal VOC](http://host.robots.ox.ac.uk/pascal/VOC/index.html)를 위한 데이터셋 구조:
 ```
 VOC20{07,12}/
   Annotations/
@@ -129,7 +129,7 @@ VOC20{07,12}/
   JPEGImages/
 ```
 
-## Expected dataset structure for [ADE20k Scene Parsing](http://sceneparsing.csail.mit.edu/):
+## [ADE20k Scene Parsing](http://sceneparsing.csail.mit.edu/)을 위한 데이터셋 구조:
 ```
 ADEChallengeData2016/
   annotations/
