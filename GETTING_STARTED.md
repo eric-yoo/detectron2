@@ -1,4 +1,4 @@
-## 디텍트론2 시작하기
+## Detectron2 시작하기
 
 This document provides a brief intro of the usage of builtin command-line tools in detectron2.
 
@@ -68,7 +68,7 @@ To evaluate a model's performance, use
 ```
 For more options, see `./train_net.py -h`.
 
-### 코드에서 디텍트론2 사용하기
+### 코드에서 Detectron2 사용하기
 
 See our [Colab Notebook](https://colab.research.google.com/drive/16jcaJoc6bCFAQ96jDe2HwtXj7BMD_-m5)
 to learn how to use detectron2 APIs to:

@@ -1,6 +1,6 @@
 # 다른 라이브러리와의 호환성
 
-## 디텍트론 (및 maskrcnn-benchmark)과의 호환성
+## Detectron(및 maskrcnn-benchmark)과의 호환성
 
 Detectron2 addresses some legacy issues left in Detectron. As a result, their models
 are not compatible:

@@ -1,7 +1,7 @@
 
 # 벤치마크
 
-여기서는 디텍트론2에서 제공하는 Mask R-CNN의 학습 속도를
+여기서는 Detectron2에서 제공하는 Mask R-CNN의 학습 속도를
 다른 유명한 오픈소스 구현체 몇 가지와 비교합니다.
 
 
@@ -108,7 +108,7 @@ __ https://github.com/matterport/Mask_RCNN/
   ```
   python coco.py train --dataset=/data/coco/ --model=imagenet
   ```
-  이 구현체의 여러 세부적인 사항들은 디텍트론의
+  이 구현체의 여러 세부적인 사항들은 Detectron의
   표준과 다를 수 있습니다.
 
   <details>

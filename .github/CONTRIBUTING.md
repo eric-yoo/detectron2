@@ -1,4 +1,4 @@
-# 디텍트론2에 기여하기
+# Detectron2에 기여하기
 
 ## Issues
 We use GitHub issues to track public bugs and questions.
