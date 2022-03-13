@@ -134,6 +134,7 @@ extensions = [
     "sphinx.ext.mathjax",
     "sphinx.ext.viewcode",
     "sphinx.ext.githubpages",
+    "sphinx_sitemap"
 ]
 
 # -- Configurations for plugins ------------
@@ -250,6 +251,10 @@ latex_documents = [
 # (source start file, name, description, authors, manual section).
 man_pages = [(master_doc, "detectron2", "detectron2 Documentation", [author], 1)]
 
+# -- Options for sitemap (https://pypi.org/project/sphinx-sitemap/) ----------
+
+html_baseurl = 'https://detectron2-kr.netlify.app/'
+sitemap_filename = "sitemap.xml"
 
 # -- Options for Texinfo output ----------------------------------------------
 
