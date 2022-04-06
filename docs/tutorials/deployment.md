@@ -96,7 +96,7 @@ Caffe2에서 사용할 수 없는 제어 흐름이나 연산자 (e.g. deformable
 
 ### 사용법
 
-API 목록은 [API 문서](../modules/export) 에 있습니다.
+API 목록은 [API 사용 가이드](../modules/export) 에 있습니다.
 [export_model.py](../../tools/deploy/) 는 이 API를 사용하여 일반적인 모델을 변환하는 예제입니다.
 사용자 지정 모델/데이터셋 또한 예제 스크립트에 추가할 수 있습니다.
 

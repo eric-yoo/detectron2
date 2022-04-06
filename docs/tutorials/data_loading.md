@@ -82,7 +82,7 @@ mapper 이외의 다른 부분(e.g. 다른 샘플링 또는 일괄 처리 로직
 원하는 도구 어느것이든 사용하여 구현할 수 있습니다.
 
 무엇을 구현하려든 간에
-[Detectron2.data의 API 문서](../modules/data) 에서 이 함수들의 API에 대해 자세히 알아볼 것을
+[Detectron2.data의 API 사용 가이드](../modules/data) 에서 이 함수들의 API에 대해 자세히 알아볼 것을
 권장드립니다.
 
 ## 커스텀 데이터로더 사용

@@ -53,7 +53,7 @@ model = build_model(cfg)  # 이 라인은 앞서 정의한 `ToyBackbone` 를 불
 다른 아키텍처를 구현한 더 많은 예시는
 [projects/](../../projects/) 에 있습니다.
 
-전체 레지스트리 목록은 [API 문서](../modules/modeling.html#model-registries) 에 있습니다.
+전체 레지스트리 목록은 [API 사용 가이드](../modules/modeling.html#model-registries) 에 있습니다.
 이 레지스트리에 컴포넌트를 등록하면 모델의 다양한 부분 혹은 모델 전체를
 커스터마이징할 수 있습니다.
 

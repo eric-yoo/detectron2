@@ -23,7 +23,7 @@ checkpointer.save("model_999")  # output/model_999.pth에 저장
 
 Detectron2의 checkpointer는 pytorch의 `.pth` 포맷 모델뿐만 아니라
 모델 zoo의 `.pkl` 파일을 인식합니다.
-그 사용법에 관한 자세한 내용은 [API 문서](../modules/checkpoint.html#detectron2.checkpoint.DetectionCheckpointer)
+그 사용법에 관한 자세한 내용은 [API 사용 가이드](../modules/checkpoint.html#detectron2.checkpoint.DetectionCheckpointer)
 에서 확인하십시오.
 
 모델 파일은 임의로 조작할 수 있는데 `.pth` 파일의 경우 `torch.{load,save}` 를, `.pkl` 파일의 경우

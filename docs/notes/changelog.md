@@ -9,7 +9,7 @@
 
 이 라이브러리는 연구 목적으로 만들어졌기 때문에 하위 호환되지 않는 변경 사항이 있을 수 있습니다.
 그러나 다음과 같은 방법으로 사용자의 방해를 줄이려고 노력합니다.
-* 별도 각주가 없을 경우 [API 문서](https://detectron2.readthedocs.io/modules/index.html)의 API들은
+* 별도 각주가 없을 경우 [API 사용 가이드](https://detectron2.readthedocs.io/modules/index.html)의 API들은
   함수/클래스의 이름과 인수(argument), 문서화된 클래스 속성(attribute) 등이
   *stable*하다고 간주합니다.
   일반적으로 하위 호환성이 보장되지만, 만약 그렇지 않은 변화가 생길 경우 그 전에 적당한 기간동안
