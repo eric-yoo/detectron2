@@ -110,9 +110,9 @@ copyright = "2019-2020, detectron2 contributors"
 author = "detectron2 contributors"
 
 # The short X.Y version
-version = detectron2.__version__
+version = ''
 # The full version, including alpha/beta/rc tags
-release = version
+release = 'latest'
 
 
 # -- General configuration ---------------------------------------------------
