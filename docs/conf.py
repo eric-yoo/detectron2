@@ -254,7 +254,7 @@ man_pages = [(master_doc, "detectron2", "detectron2 Documentation", [author], 1)
 # -- Options for sitemap (https://pypi.org/project/sphinx-sitemap/) ----------
 
 html_baseurl = 'https://detectron2-kr.netlify.app/'
-sitemap_filename = "sitemap.xml"
+sitemap_filename = "sitemap-index.xml"
 
 # -- Options for Texinfo output ----------------------------------------------
 
